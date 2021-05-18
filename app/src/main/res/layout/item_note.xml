@@ -22,7 +22,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/item_taskimage_view"
+                android:id="@+id/item_noteimage_view"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
@@ -32,7 +32,7 @@
                 tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             <TextView
-                android:id="@+id/item_task_title"
+                android:id="@+id/item_note_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -41,12 +41,12 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/item_taskimage_view"
+                app:layout_constraintStart_toEndOf="@id/item_noteimage_view"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@tools:sample/lorem/random" />
 
             <TextView
-                android:id="@+id/item_task_description"
+                android:id="@+id/item_note_description"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="8dp"
@@ -54,8 +54,8 @@
                 android:maxLines="2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/item_taskimage_view"
-                app:layout_constraintTop_toBottomOf="@id/item_task_title"
+                app:layout_constraintStart_toEndOf="@id/item_noteimage_view"
+                app:layout_constraintTop_toBottomOf="@id/item_note_title"
                 tools:text="@tools:sample/lorem/random" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

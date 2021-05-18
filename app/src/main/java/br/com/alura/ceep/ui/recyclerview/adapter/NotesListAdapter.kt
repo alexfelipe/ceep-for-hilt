@@ -4,35 +4,42 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import br.com.alura.ceep.databinding.ItemTaskBinding
-import br.com.alura.ceep.model.Task
+import br.com.alura.ceep.databinding.ItemNoteBinding
+
+import br.com.alura.ceep.model.Note
 import coil.load
 
-class TasksListAdapter(
+class NotesListAdapter(
     private val context: Context,
-    val tasks: List<Task>
-) : RecyclerView.Adapter<TasksListAdapter.ViewHolder>() {
+    notes: List<Note> = emptyList()
+) : RecyclerView.Adapter<NotesListAdapter.ViewHolder>() {
 
-    private val dataset = tasks.toMutableList()
+    private val dataset = notes.toMutableList()
 
-    class ViewHolder(private val binding: ItemTaskBinding) :
+    class ViewHolder(private val binding: ItemNoteBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(task: Task) {
+        fun bind(task: Note) {
             binding.apply {
-                itemTaskTitle.text = task.title
-                itemTaskDescription.text = task.description
-                itemTaskimageView.load("https://picsum.photos/400")
+                itemNoteTitle.text = task.title
+                itemNoteDescription.text = task.description
+                itemNoteimageView.load("https://picsum.photos/400")
             }
         }
 
+    }
+
+    fun update(notes: List<Note>) {
+        dataset.clear()
+        dataset.addAll(notes)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder = ViewHolder(
-        ItemTaskBinding.inflate(
+        ItemNoteBinding.inflate(
             LayoutInflater.from(context),
             parent,
             false
@@ -42,7 +49,7 @@ class TasksListAdapter(
     override fun onBindViewHolder(
         holder: ViewHolder,
         position: Int
-    ) = holder.bind(tasks[position])
+    ) = holder.bind(dataset[position])
 
     override fun getItemCount() = dataset.size
 

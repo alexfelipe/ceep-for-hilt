@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/tasksListFragment">
+    app:startDestination="@id/notesListFragment">
 
     <fragment
-        android:id="@+id/tasksListFragment"
-        android:name="br.com.alura.ceep.TasksListFragment"
-        android:label="fragment_tasks_list"
-        tools:layout="@layout/fragment_tasks_list" />
+        android:id="@+id/notesListFragment"
+        android:name="br.com.alura.ceep.ui.fragment.NotesListFragment"
+        android:label="fragment_notes_list"
+        tools:layout="@layout/fragment_notes_list" />
 </navigation>

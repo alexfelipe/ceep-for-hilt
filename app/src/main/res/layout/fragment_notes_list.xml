@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TasksListFragment">
+    tools:context=".NotesListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragment_tasks_list_recyclerview"
+        android:id="@+id/fragment_notes_list_recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -17,6 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/item_task" />
+        tools:listitem="@layout/item_note" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

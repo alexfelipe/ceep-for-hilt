@@ -1,8 +1,9 @@
-package br.com.alura.ceep
+package br.com.alura.ceep.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
+import br.com.alura.ceep.R
 import br.com.alura.ceep.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
