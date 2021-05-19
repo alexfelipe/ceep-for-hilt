@@ -7,6 +7,8 @@ import androidx.room.RoomDatabase
 import br.com.alura.ceep.database.dao.NoteDao
 import br.com.alura.ceep.model.Note
 
+private const val DATABASE_NAME = "ceep.db"
+
 @Database(
     version = 1,
     exportSchema = false,
@@ -27,7 +29,7 @@ abstract class AppDatabase : RoomDatabase() {
                 Room.databaseBuilder(
                     context,
                     AppDatabase::class.java,
-                    "ceep.db"
+                    DATABASE_NAME
                 ).build()
             }
         }

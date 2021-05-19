@@ -4,10 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import br.com.alura.ceep.R
 import br.com.alura.ceep.databinding.ItemNoteBinding
 
 import br.com.alura.ceep.model.Note
 import coil.load
+
+private const val DEFAULT_IMAGE = "https://picsum.photos/400"
 
 class NotesListAdapter(
     private val context: Context,
@@ -23,7 +26,11 @@ class NotesListAdapter(
             binding.apply {
                 itemNoteTitle.text = task.title
                 itemNoteDescription.text = task.description
-                itemNoteimageView.load("https://picsum.photos/400")
+                itemNoteimageView.load(DEFAULT_IMAGE) {
+                    placeholder(R.drawable.image_placeholder)
+                    fallback(R.drawable.image_placeholder)
+                    error(R.drawable.image_placeholder)
+                }
             }
         }
 
