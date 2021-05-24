@@ -12,8 +12,12 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+    @Inject
+    lateinit var instance: TestMyFirstDI
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("MainActivity", "onCreate: $instance")
         val binding = ActivityMainBinding
             .inflate(layoutInflater).also {
                 setContentView(it.root)
@@ -25,3 +29,5 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+class TestMyFirstDI @Inject constructor()

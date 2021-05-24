@@ -1,23 +1,30 @@
 package br.com.alura.ceep.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import br.com.alura.ceep.databinding.FragmentNotesListBinding
 import br.com.alura.ceep.ui.recyclerview.adapter.NotesListAdapter
 import br.com.alura.ceep.ui.viewmodel.NoteViewModel
-import br.com.alura.ceep.ui.viewmodel.factory.NoteViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class NotesListFragment : Fragment() {
 
     private var _binding: FragmentNotesListBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: NoteViewModel by viewModels { NoteViewModelFactory(requireContext()) }
+    private val viewModel: NoteViewModel by viewModels()
+
+    private val testViewModel: TestViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +43,7 @@ class NotesListFragment : Fragment() {
         savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
+        Log.i("NotesListFragment", "onViewCreated: $testViewModel")
         configureAdapter()
     }
 
@@ -54,3 +62,6 @@ class NotesListFragment : Fragment() {
     }
 
 }
+
+@HiltViewModel
+class TestViewModel @Inject constructor() : ViewModel()
