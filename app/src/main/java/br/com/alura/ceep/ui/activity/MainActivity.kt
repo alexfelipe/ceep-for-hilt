@@ -1,13 +1,10 @@
 package br.com.alura.ceep.ui.activity
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import br.com.alura.ceep.R
 import br.com.alura.ceep.databinding.ActivityMainBinding
-import br.com.alura.ceep.retrofit.RetrofitInit
 
 class MainActivity : AppCompatActivity() {
 

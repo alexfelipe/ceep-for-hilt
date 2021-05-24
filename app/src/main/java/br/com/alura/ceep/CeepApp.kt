@@ -9,9 +9,9 @@ import kotlinx.coroutines.launch
 
 class CeepApp : Application() {
 
-//    override fun onCreate() {
-//        super.onCreate()
-//
+    override fun onCreate() {
+        super.onCreate()
+
 //        saveNotes(
 //            listOf(
 //                Note(
@@ -24,7 +24,7 @@ class CeepApp : Application() {
 //                )
 //            )
 //        )
-//    }
+    }
 
     private fun saveNotes(notes: List<Note>) {
         CoroutineScope(IO).launch {
